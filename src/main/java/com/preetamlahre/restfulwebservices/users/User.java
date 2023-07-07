@@ -1,9 +1,14 @@
 package com.preetamlahre.restfulwebservices.users;
 
 import java.time.LocalDate;
+
+import jakarta.validation.constraints.Past;
+import jakarta.validation.constraints.Size;
 public class User {
 	private int id;
+	@Size(min=2,message="Name should have 2 charaxters")
 	private String name;
+	@Past(message="birth date should be in past")
 	private LocalDate birthDate;
 
 	@Override
